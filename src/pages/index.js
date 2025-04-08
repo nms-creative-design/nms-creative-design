@@ -18,7 +18,6 @@ export default function Home() {
           <Hero />
           <ImageSlider />
         </main>
-        {/* <Footer /> */}
       </div>
     </>
   );
