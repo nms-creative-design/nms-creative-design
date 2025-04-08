@@ -71,16 +71,17 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[80vh] w-full flex flex-col items-start justify-center overflow-hidden bg-black">
-      {/* Modern subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black/95 z-0"></div>
+      {/* Pure black background - removed gradients */}
+      <div className="absolute inset-0 bg-black z-0"></div>
       
       {/* Glass-like surface reflection at bottom - more subtle */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/5 to-transparent z-0"></div>
       
-      {/* Light Beam Effect - CENTERED BEAM with ANIMATED GLOW */}
-      <div className="absolute inset-0 z-0 overflow-hidden" style={{ height: '65vh' }}>
-        <div className="absolute right-[16%] top-0 h-full w-[450px]">
-          {/* Static Core Beam - ALWAYS CENTERED AND FIXED */}
+      {/* Light Beam Effect - FIXED POSITION */}
+      <div className="absolute inset-0 z-0 overflow-hidden" style={{ height: '70vh' }}>
+        {/* Fixed position light beam container - using fixed pixel values */}
+        <div className="absolute h-full w-[450px]" style={{ left: 'calc(50% + 150px)' }}>
+          {/* Static Core Beam - FIXED POSITION */}
           <div className="absolute left-1/2 top-0 h-full transform -translate-x-1/2 w-[10px] bg-white/90 shadow-[0_0_30px_10px_rgba(255,255,255,0.7)] blur-sm"></div>
           
           {/* Dynamic Glow Container */}
@@ -163,7 +164,7 @@ const Hero = () => {
         </div>
         
         {/* Enhanced ambient glow */}
-        <div className="absolute right-[23%] top-[30%] w-full h-full">
+        <div className="absolute top-[30%] w-full h-full" style={{ left: 'calc(50% + 50px)' }}>
           <div className="absolute h-full w-full bg-gradient-radial from-white/15 via-white/8 to-transparent blur-3xl animate-pulse-very-slow"></div>
         </div>
       </div>
