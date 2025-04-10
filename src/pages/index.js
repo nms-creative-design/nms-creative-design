@@ -1,5 +1,8 @@
+import Cta from '@/components/Cta';
+import About from '@/components/sections/About';
 import Hero from '@/components/sections/Hero';
 import ImageSlider from '@/components/sections/ImageSlider';
+import Portfolio from '@/components/sections/Portfolio';
 import Services from '@/components/sections/Services';
 import { StickyNavbar } from '@/components/StickyNavbar';
 import { Navbar } from '@material-tailwind/react';
@@ -19,6 +22,8 @@ export default function Home() {
           <Hero />
           <ImageSlider />
           <Services />
+          <About />
+       
         </main>
       </div>
     </>

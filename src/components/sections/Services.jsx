@@ -3,7 +3,7 @@ import Bento from '../Bento';
 
 const Services = () => {
   return (
-    <section className="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-[100px] pb-[100px]">
+    <section className="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-[48px] pb-[48px]">
       {/* Pure black background - matching Hero */}
       <div className="absolute inset-0 bg-black z-0"></div>
       
@@ -14,7 +14,7 @@ const Services = () => {
             <div className="space-y-6">
               {/* Modern gradient heading */}
               <h2 className="font-bold tracking-tight leading-tight">
-                <span className="bg-gradient-to-r from-gray-300 via-white to-gray-200 text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text">
                   Services Tailored to You
                 </span>
               </h2>

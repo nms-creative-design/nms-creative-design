@@ -70,7 +70,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] w-full flex flex-col items-start justify-center overflow-hidden bg-black">
+    <section className="relative min-h-[90vh] w-full flex flex-col items-start justify-center overflow-hidden bg-black">
       {/* Pure black background - removed gradients */}
       <div className="absolute inset-0 bg-black z-0"></div>
       
@@ -163,8 +163,8 @@ const Hero = () => {
             <div className="space-y-6 max-w-3xl">
               {/* Modern gradient heading */}
               <h1 className="font-bold tracking-tight leading-tight">
-                <span className="bg-gradient-to-r from-gray-300 via-white to-gray-200 text-transparent bg-clip-text">
-                  Dominate Online with Creative Design's 
+                <span className="bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text">
+                  Dominate Online with Creative Design
                 </span>
               </h1>
 
