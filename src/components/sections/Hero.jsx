@@ -162,9 +162,9 @@ const Hero = () => {
           <div className="flex flex-col items-start text-left">
             <div className="space-y-6 max-w-3xl">
               {/* Modern gradient heading */}
-              <h1 className="font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl mt-6 leading-tight">
+              <h1 className="font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-gray-300 via-white to-gray-200 text-transparent bg-clip-text">
-                  Dominate Online with Creative Design's Full Power
+                  Dominate Online with Creative Design's 
                 </span>
               </h1>
 
@@ -182,11 +182,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Featured Video and Image */}
-      <div className="container mx-auto px-6 py-8 max-w-6xl z-20">
+     {/* Featured Video and Image */}
+     <div className="container mx-auto px-6 py-8 max-w-6xl z-20">
         <div className="flex flex-col md:flex-row items-start gap-10">
-          {/* Video (Rectangle 16:9) */}
-          <div className="relative rounded-xl overflow-hidden border border-white/10 w-full md:w-2/3 h-[320px] shadow-xl">
+          {/* Video (Rectangle 16:9) - Always visible */}
+          <div className="relative rounded-xl overflow-hidden border border-white w-full md:w-2/3 h-[320px] shadow-xl">
             <video
               src="/images/vid.mp4"
               autoPlay
@@ -194,18 +194,18 @@ const Hero = () => {
               muted
               playsInline
               preload="auto"
-              className="w-full h-full object-cover rounded-xl relative z-10"
+              className="w-full h-full object-cover rounded-xl relative z-10 border border-white/30"
             />
           </div>
 
-          {/* Image (Square) */}
-          <div className="relative w-full md:w-1/3 h-[320px]">
+          {/* Image (Square) - Hidden on mobile and smaller screens, visible on lg screens and up */}
+          <div className="hidden lg:block relative w-full md:w-1/3 h-[320px]">
             <Image
               src="/images/x.png"
               alt="Creative X"
               width={400}
               height={400}
-              className="rounded-xl w-full h-full object-cover relative z-10 shadow-lg"
+              className="rounded-xl w-full h-full object-cover relative z-10 shadow-lg border border-white"
             />
           </div>
         </div>
