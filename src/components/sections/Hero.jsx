@@ -74,8 +74,7 @@ const Hero = () => {
       {/* Pure black background - removed gradients */}
       <div className="absolute inset-0 bg-black z-0"></div>
       
-      {/* Glass-like surface reflection at bottom - more subtle */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/5 to-transparent z-0"></div>
+      {/* Removed: Glass-like surface reflection at bottom */}
       
       {/* Light Beam Effect - FIXED POSITION */}
       <div className="absolute inset-0 z-0 overflow-hidden" style={{ height: '70vh' }}>
@@ -142,19 +141,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Dynamic bottom glow */}
-          <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-[700px] h-72">
-            {/* Outer glow ring */}
-            <div className="absolute inset-0 bg-gradient-radial from-white/30 via-white/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-            
-            {/* Inner bright core */}
-            <div className="absolute inset-[30%] bg-gradient-radial from-white/70 via-white/40 to-transparent rounded-full blur-xl animate-pulse-medium"></div>
-            
-            {/* Subtle moving highlights */}
-            <div className="absolute inset-[40%] animate-glow-shift">
-              <div className="absolute inset-0 bg-gradient-radial from-white/50 to-transparent rounded-full blur-md"></div>
-            </div>
-          </div>
+          {/* Removed: Dynamic bottom glow */}
           
           {/* Particles container */}
           <div 
@@ -163,9 +150,9 @@ const Hero = () => {
           ></div>
         </div>
         
-        {/* Enhanced ambient glow */}
+        {/* Enhanced ambient glow - made less intense for darker look */}
         <div className="absolute top-[30%] w-full h-full" style={{ left: 'calc(50% + 50px)' }}>
-          <div className="absolute h-full w-full bg-gradient-radial from-white/15 via-white/8 to-transparent blur-3xl animate-pulse-very-slow"></div>
+          <div className="absolute h-full w-full bg-gradient-radial from-white/10 via-white/5 to-transparent blur-3xl animate-pulse-very-slow"></div>
         </div>
       </div>
 
@@ -177,7 +164,7 @@ const Hero = () => {
               {/* Modern gradient heading */}
               <h1 className="font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl mt-6 leading-tight">
                 <span className="bg-gradient-to-r from-gray-300 via-white to-gray-200 text-transparent bg-clip-text">
-                  Dominate Online with Creative X's Full Power
+                  Dominate Online with Creative Design's Full Power
                 </span>
               </h1>
 
