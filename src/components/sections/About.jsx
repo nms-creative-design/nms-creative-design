@@ -97,7 +97,7 @@ const About = () => {
                   {counters.clients}
                   <span className="text-6xl">+</span>
                 </h3>
-                <p className="text-gray-400 text-2xl ml-2 mb-3">clients.</p>
+                <p className="text-gray-400 text-2xl ml-2 mb-3">clients</p>
               </div>
               
               <div className="flex items-end">

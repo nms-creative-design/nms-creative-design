@@ -2,11 +2,12 @@ import Cta from '@/components/Cta';
 import About from '@/components/sections/About';
 import Hero from '@/components/sections/Hero';
 import ImageSlider from '@/components/sections/ImageSlider';
-import Portfolio from '@/components/sections/Portfolio';
+import Project from '@/components/sections/Project';
 import Services from '@/components/sections/Services';
 import { StickyNavbar } from '@/components/StickyNavbar';
 import { Navbar } from '@material-tailwind/react';
 import Head from 'next/head';
+
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
           <ImageSlider />
           <Services />
           <About />
+          <Project />
+       
        
         </main>
       </div>
