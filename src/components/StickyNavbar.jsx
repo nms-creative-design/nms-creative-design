@@ -70,7 +70,7 @@ export function StickyNavbar() {
         <div className="max-w-[1200px] mx-auto w-full flex items-center justify-between">
           <div className="flex items-center justify-between text-white w-full">
             <a href="#" className="mr-4 cursor-pointer py-1">
-              <Image src="/images/full-logo.png" width={150} height={50} alt="Logo" className="h-8 w-auto" />
+              <Image src="/images/logoupdated.png" width={150} height={50} alt="Logo" className="h-8 w-auto" />
             </a>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
