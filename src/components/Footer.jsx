@@ -8,8 +8,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
         {/* Creatives SVG Logo at the top of footer */}
         <div className="mb-8 sm:mb-12 md:mb-16 text-center relative">
-          {/* Dark gradient overlay at top */}
-          <div className="h-12 sm:h-16 md:h-20 bg-gradient-to-b from-black to-transparent absolute top-0 left-0 right-0 w-full z-10"></div>
+          {/* Removed the top gradient overlay */}
           
           <div className="w-full flex justify-center relative z-0">
             <svg width="100%" height="auto" viewBox="0 0 1135 199" fill="none" xmlns="http://www.w3.org/2000/svg" className="max-w-[800px] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1100px] transition-all">
@@ -23,14 +22,14 @@ const Footer = () => {
             </svg>
           </div>
           
-          {/* Dark gradient overlay at bottom - MOVED LOWER */}
+          {/* Dark gradient overlay at bottom */}
           <div className="h-16 sm:h-20 md:h-24 bg-gradient-to-t from-black to-transparent absolute bottom-0 left-0 right-0 w-full z-20"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Left Section - CTA */}
           <div className="space-y-6 flex flex-col items-center md:items-start">
-            <div className="mt-8">
+            <div>
               <Typography variant="paragraph" className="text-lg font-bold">
                 Ready to make your vision a reality?<br />
                 Contact us today!
