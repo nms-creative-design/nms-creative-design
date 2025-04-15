@@ -1,4 +1,5 @@
 import Cta from '@/components/Cta';
+import Footer from '@/components/Footer';
 import About from '@/components/sections/About';
 import Hero from '@/components/sections/Hero';
 import ImageSlider from '@/components/sections/ImageSlider';
@@ -25,6 +26,7 @@ export default function Home() {
           <Services />
           <About />
           <Project />
+          <Footer />
        
        
         </main>

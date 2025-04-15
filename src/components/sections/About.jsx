@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // Define ImgWithShadow as a separate component
 export function ImgWithShadow() {
@@ -18,7 +18,10 @@ const About = () => {
     growth: 0,
   });
 
+  const sectionRef = useRef(null);
+
   useEffect(() => {
+    // Counter animation logic
     const targetValues = {
       projects: 100,
       clients: 50,
@@ -52,7 +55,29 @@ const About = () => {
       });
     }, interval);
 
-    return () => clearInterval(timer);
+    // IntersectionObserver for animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target); // Stop observing after animation
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      clearInterval(timer);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -64,14 +89,20 @@ const About = () => {
       <div className="container mx-auto px-6 py-16 max-w-6xl z-10">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col items-center text-center">
-            <div className="space-y-6">
-              {/* Modern gradient heading */}
-              <h2 className="font-bold tracking-tight leading-tight">
+            <div className="space-y-6" ref={sectionRef}>
+              {/* Heading with animation class */}
+              <h2
+                className="font-bold tracking-tight leading-tight animate-on-scroll"
+              >
                 <span className="bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text">
                   Who We Are
                 </span>
               </h2>
-              <p className="text-gray-300 max-w-xl text-lg font-light leading-relaxed">
+              {/* Paragraph with animation class */}
+              <p
+                className="text-gray-300 max-w-xl text-lg font-light leading-relaxed animate-on-scroll"
+                style={{ animationDelay: '0.2s' }} // Staggered effect
+              >
                 We're more than a company—we're changemakers. Our passionate team is driven by a singular mission: creating innovative products that transform everyday experiences. We don't just meet expectations; we redefine possibilities, delivering exceptional solutions that make a meaningful difference in people's lives.
               </p>
             </div>
@@ -131,6 +162,20 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* Inline CSS for animation */}
+      <style jsx>{`
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-in .animate-on-scroll {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 };
