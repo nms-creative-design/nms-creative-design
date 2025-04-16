@@ -22,15 +22,39 @@ export default function Faq() {
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
-  const faqs = [
-    "What services do you offer?",
-    "How long does it take to complete a project?",
-    "What is your pricing structure?",
-    "Can you handle rush projects with tight deadlines?",
-    "How do I start a project with you?",
-    "How can I contact you for further inquiries or to get started?",
-    "Can I provide input and be involved in the creative process?",
-    "Do you provide revisions or changes to the deliverables?"
+  const faqContent = [
+    {
+      question: "What services do you offer?",
+      answer: "We offer a wide range of services including branding, graphic design, web design and development, illustration, animation, content creation, photography, and more. We provide comprehensive creative solutions tailored to meet your specific needs."
+    },
+    {
+      question: "How long does it take to complete a project?",
+      answer: "The project timeline depends on the scope and complexity of the project. We strive to provide accurate timelines during the initial discussions. Factors such as revisions, client feedback, and the size of the project can influence the duration. We are committed to delivering high-quality work within agreed-upon timelines."
+    },
+    {
+      question: "What is your pricing structure?",
+      answer: "Our pricing structure varies based on the services required and the scope of the project. We provide customized quotes tailored to your specific needs. During our initial discussions, we will provide you with a transparent breakdown of costs and any additional fees involved."
+    },
+    {
+      question: "Can you handle rush projects with tight deadlines?",
+      answer: "We strive to accommodate rush projects whenever possible, depending on our current workload and availability. Contact us with your specific requirements, and we will assess if we can meet your deadline and provide you with the best possible solution."
+    },
+    {
+      question: "How do I start a project with you?",
+      answer: "Starting a project with us is simple. Reach out to us via email or phone, and our team will guide you through the process. We'll discuss your requirements, goals, and timeline to ensure a clear understanding of your project's scope. From there, we'll provide you with a customized proposal and timeline."
+    },
+    {
+      question: "How can I contact you for further inquiries or to get started?",
+      answer: "You can reach us through our contact form on this website, email us directly at contact@example.com, or call us at (555) 123-4567. Our office hours are Monday to Friday, 9am to 5pm EST. We typically respond to all inquiries within 24 business hours."
+    },
+    {
+      question: "Can I provide input and be involved in the creative process?",
+      answer: "Absolutely! We value your input and encourage your active involvement in the creative process. Collaboration is key to ensuring that the final outcome aligns with your vision and goals. We will work closely with you, seeking your feedback and incorporating your ideas at various stages of the project."
+    },
+    {
+      question: "Do you provide revisions or changes to the deliverables?",
+      answer: "Yes, we offer a certain number of revisions as part of our service packages. We understand that feedback and adjustments may be necessary to achieve the desired result. We will work closely with you to ensure that your feedback is incorporated into the final deliverables."
+    }
   ];
 
   return (
@@ -56,8 +80,8 @@ export default function Faq() {
           </div>
 
           {/* Right Content */}
-          <div className="lg:w-2/3 space-y-6">
-            {faqs.map((item, index) => (
+          <div className="lg:w-2/3 space-y-4">
+            {faqContent.map((item, index) => (
               <div key={index} className="relative group">
                 <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-red-600/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition duration-300"></div>
                 <Accordion
@@ -69,12 +93,10 @@ export default function Faq() {
                     onClick={() => handleOpen(index + 1)} 
                     className="text-white hover:text-red-500 text-lg font-medium text-left px-6 py-5 flex items-center justify-between border-b-0 transition-colors"
                   >
-                    {item}
+                    {item.question}
                   </AccordionHeader>
                   <AccordionBody className="text-gray-300 text-base px-6 pb-6 pt-0">
-                    {/* Replace this with actual answers */}
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac erat at dui gravida feugiat. 
-                    Mauris eget dignissim enim, ut tempor dolor. Cras ullamcorper lacus vitae eros lobortis commodo.
+                    {item.answer}
                   </AccordionBody>
                 </Accordion>
               </div>
