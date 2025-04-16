@@ -29,8 +29,8 @@ export default function Home() {
           <About />
           <Project />
           <Setapart />
+          <Faq />
           <Cta />
-          {/* <Faq /> */}
           <Footer />
        
        
