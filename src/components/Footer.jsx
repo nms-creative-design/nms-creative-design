@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="w-full bg-black text-white py-12">
       <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
         {/* Removed the entire Creatives SVG section and gradients */}
-        <Creatives />
+       <Creatives />
     
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Left Section - CTA */}

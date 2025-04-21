@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link"; // Import Link from Next.js
 import {
   Navbar,
   Typography,
@@ -26,16 +27,19 @@ export function StickyNavbar() {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {["Home", "About"].map((item) => (
+      {[
+        { name: "Home", href: "/" },
+        { name: "About", href: "/aboutus" },
+      ].map((item) => (
         <Typography
-          key={item}
+          key={item.name}
           as="li"
           variant="small"
           className="p-1 font-normal text-gray-200"
         >
-          <a href="#" className="flex items-center">
-            {item}
-          </a>
+          <Link href={item.href} className="flex items-center">
+            {item.name}
+          </Link>
         </Typography>
       ))}
       <Typography as="li" variant="small" className="p-1 font-normal text-gray-200">
@@ -69,9 +73,15 @@ export function StickyNavbar() {
       <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-1 lg:px-8 lg:py-2 bg-black border-none">
         <div className="max-w-[1200px] mx-auto w-full flex items-center justify-between">
           <div className="flex items-center justify-between text-white w-full">
-            <a href="#" className="mr-4 cursor-pointer py-1">
-              <Image src="/images/logoupdated.png" width={150} height={50} alt="Logo" className="h-8 w-auto" />
-            </a>
+            <Link href="/" className="mr-4 cursor-pointer py-1">
+              <Image
+                src="/images/logoupdated.png"
+                width={150}
+                height={50}
+                alt="Logo"
+                className="h-8 w-auto"
+              />
+            </Link>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
               <Button
@@ -88,11 +98,24 @@ export function StickyNavbar() {
                 onClick={() => setOpenNav(!openNav)}
               >
                 {openNav ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    className="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 )}
