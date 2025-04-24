@@ -38,7 +38,7 @@ export function StickyNavbar() {
         <Menu>
           <MenuHandler>
             <div className="flex items-center cursor-pointer">
-              Services
+            <Link href="/services">Services</Link>
               <svg
                 className="h-4 w-4 ml-1"
                 fill="none"
@@ -52,13 +52,16 @@ export function StickyNavbar() {
           </MenuHandler>
           <MenuList className="bg-black border-gray-700 text-gray-200">
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-              Service 1
+              Web Design
             </MenuItem>
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-              Service 2
+             UI / UX Design
             </MenuItem>
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-              Service 3
+             Web development
+            </MenuItem>
+            <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
+             Graphic Design
             </MenuItem>
           </MenuList>
         </Menu>

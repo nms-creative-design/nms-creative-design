@@ -22,7 +22,7 @@ const TabsAbout = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <section className="bg-black py-24 px-4">
+    <section className="bg-black py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Heading */}
         <div className="text-left mb-10">

@@ -50,6 +50,8 @@ export function CarouselCustomNavigation() {
   const renderCarousel = (imageSet, isMobile = false) => (
     <Carousel
       className="rounded-xl relative"
+      prevArrow={({ handlePrev }) => null} // Setting to null to remove default top arrows
+      nextArrow={({ handleNext }) => null} // Setting to null to remove default top arrows
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-0 right-0 z-50 flex justify-between items-center px-4">
           {/* Pagination Dots */}
@@ -64,7 +66,7 @@ export function CarouselCustomNavigation() {
               />
             ))}
           </div>
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows (only at bottom) */}
           <div className="flex gap-2">
             <IconButton
               variant="text"

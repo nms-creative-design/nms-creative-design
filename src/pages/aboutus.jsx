@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { Tabs } from "@material-tailwind/react";
 import TabsAbout from "@/components/About/TabsAbout";
 import Values from "@/components/About/Values";
+import Team from "@/components/About/Team";
 
 export default function About() {
   return (
@@ -19,6 +20,7 @@ export default function About() {
       <Difference />
       <TabsAbout />
       <Values />
+      <Team />
       <Cta />
       <Footer />
        

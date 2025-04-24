@@ -34,7 +34,7 @@ const Values = () => {
     {
       title: "Creativity",
       description: "We embrace and celebrate creativity in all its forms. We believe in pushing boundaries, thinking outside the box, and finding innovative solutions to every challenge.",
-      imageSrc: "/images/content.png",
+      imageSrc: "/images/1.svg",
     },
     {
       title: "Collaboration",
@@ -98,7 +98,7 @@ const Values = () => {
                   key={index}
                   title={card.title}
                   description={card.description}
-                  görüntüSrc={card.imageSrc}
+                  imageSrc={card.imageSrc}
                   index={index}
                 />
               ))}
