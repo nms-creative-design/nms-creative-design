@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarouselCustomNavigation } from './CarouselCustomNavigation';
+import { CarouselCustomNavigation } from './Home/CarouselCustomNavigation';
 
 const Project = () => {
   return (

@@ -130,11 +130,11 @@ const Team = () => {
             <div className="space-y-6">
               <h2 className="font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text">
-                  Our Team Values
+                  Our Team 
                 </span>
               </h2>
               <p className="text-gray-300 max-w-xl text-lg font-light leading-relaxed">
-                These team values serve as the foundation of our creative studio, shaping our culture, guiding our work, and driving our success in delivering exceptional creative experiences.
+              Together, we weave magic, breathe life into ideas, and transform concepts into captivating realities. With diverse expertise and boundless creativity, we collaborate seamlessly to deliver awe-inspiring solutions that ignite imaginations and leave lasting impressions. Get ready to embark on a journey of limitless possibilities with our extraordinary creative team.
               </p>
             </div>
           </div>

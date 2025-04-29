@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from "@material-tailwind/react";
 import Link from 'next/link';
-import Creatives from './Creatives';
+import Creatives from './Home/Creatives';
 // Removed Creatives import
 
 const Footer = () => {

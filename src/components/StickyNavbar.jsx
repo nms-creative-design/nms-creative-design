@@ -52,16 +52,16 @@ export function StickyNavbar() {
           </MenuHandler>
           <MenuList className="bg-black border-gray-700 text-gray-200">
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-              Web Design
+            <Link href="/design">Web Design</Link>
             </MenuItem>
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-             UI / UX Design
+            <Link href="/uix">UI / UX Design</Link>
             </MenuItem>
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-             Web development
+            <Link href="/uix">Web Development</Link>
             </MenuItem>
             <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-             Graphic Design
+            <Link href="/uix">Graphic Design</Link>
             </MenuItem>
           </MenuList>
         </Menu>
