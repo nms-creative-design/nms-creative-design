@@ -4,7 +4,7 @@ import DynamicPortfolio from '@/components/DynamicPortfolio'
 import Footer from '@/components/Footer'
 import Inner from '@/components/Inner'
 import { StickyNavbar } from '@/components/StickyNavbar'
-import Tabsdesign from '@/components/Web Design/Tabsdesign'
+import Tabsdesign from '@/components/Tabsdesign'
 import React from 'react'
 
 const valuesContent = {
@@ -79,7 +79,7 @@ const uix = () => {
       />
 
       {/* New p tag section below the cards */}
-      <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4">
+      <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
       At our company, we provide end-to-end UI/UX design services that enable our clients to deliver exceptional user experiences. Contact us today to learn more about how we can help you enhance your interface and delight your users.
       </p>
       <DynamicPortfolio />

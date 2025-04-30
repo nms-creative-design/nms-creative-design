@@ -1,7 +1,7 @@
 import React from 'react';
 import { StickyNavbar } from '@/components/StickyNavbar';
 import Footer from '@/components/Footer';
-import Tabsdesign from '@/components/Web Design/Tabsdesign';
+import Tabsdesign from '@/components/Tabsdesign';
 import Inner from '@/components/Inner';
 import { DynamicCardSection } from '@/components/DynamicCardSection';
 import Cta from '@/components/Cta';
@@ -85,7 +85,7 @@ const Design = () => {
         containerClassName="container mx-auto px-6 max-w-6xl z-10"
       />
         {/* New p tag section below the cards */}
-        <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4">
+        <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
         At NMS Creative Designs, we believe that design is not just about making things look good. It's about creating a visual language that communicates your message effectively. Whether you need a logo, website, or marketing material, we are here to help you create designs that make an impact.
       </p>
       <DynamicPortfolio />

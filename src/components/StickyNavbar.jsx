@@ -50,18 +50,18 @@ export function StickyNavbar() {
               </svg>
             </div>
           </MenuHandler>
-          <MenuList className="bg-black border-gray-700 text-gray-200">
-            <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-            <Link href="/design">Web Design</Link>
+          <MenuList className="bg-black border border-gray-700 mt-4">
+            <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
+              <Link href="/design" className="block w-full">Web Design</Link>
             </MenuItem>
-            <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-            <Link href="/uix">UI / UX Design</Link>
+            <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
+              <Link href="/uix" className="block w-full">UI / UX Design</Link>
             </MenuItem>
-            <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-            <Link href="/uix">Web Development</Link>
+            <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
+              <Link href="/webdev" className="block w-full">Web Development</Link>
             </MenuItem>
-            <MenuItem className="hover:bg-gray-800 focus:bg-gray-800 active:bg-gray-800">
-            <Link href="/uix">Graphic Design</Link>
+            <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
+              <Link href="/graphic" className="block w-full">Graphic Design</Link>
             </MenuItem>
           </MenuList>
         </Menu>
@@ -89,12 +89,14 @@ export function StickyNavbar() {
         {/* Desktop Menu and Contact Button */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">{navList}</div>
-          <Button
-            variant="outlined"
-            className="hidden lg:block border-gray-500 text-gray-300 hover:bg-gray-800 rounded-full"
-          >
-            Contact Us
-          </Button>
+          <Link href="/contact">
+            <Button
+              variant="outlined"
+              className="hidden lg:block border-gray-500 text-gray-300 hover:bg-gray-800 rounded-full"
+            >
+              Contact Us
+            </Button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <IconButton

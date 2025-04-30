@@ -1,11 +1,11 @@
 import { StickyNavbar } from "@/components/StickyNavbar";
 import React from "react";
 import Inner from "@/components/Inner";
-import Difference from "@/components/About/Difference";
+import Difference from "@/components/Difference";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 import DynamicTabs from "@/components/DynamicTabs";
-import Team from "@/components/About/Team";
+import Team from "@/components/Team";
 import { DynamicCardSection } from "@/components/DynamicCardSection";
 
 // Array of icons with their image URLs

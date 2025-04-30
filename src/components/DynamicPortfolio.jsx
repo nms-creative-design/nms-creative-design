@@ -48,10 +48,17 @@ const DynamicPortfolio = ({
   const displayProjects = projects.length > 0 ? projects.slice(0, 4) : defaultProjects;
 
   return (
-    <section className={`bg-black py-32 ${sectionClassName}`}>
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-center mb-20">
-          <h2 className={`font-bold text-5xl md:text-6xl text-gray-200 ${headingClassName}`}>
+    <section className={`relative bg-black py-32 ${sectionClassName}`}>
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-black z-0"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent opacity-50"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent opacity-50"></div>
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="text-left mb-10">
+          <h2
+            className={`font-bold text-4xl bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text ${headingClassName}`}
+          >
             {heading}
           </h2>
         </div>
@@ -89,8 +96,7 @@ const DynamicPortfolio = ({
                 </p>
                 
                 <div className="flex items-center text-white text-lg cursor-pointer">
-                  <span className="mr-2">View Project</span>
-                  <span className="transform rotate-180"></span> {/* Upward Arrow */}
+                <span className="mr-2 text-sm font-bold text-white">View Project</span>
                 </div>
               </div>
             </div>
@@ -98,9 +104,9 @@ const DynamicPortfolio = ({
         </div>
 
         <div className="flex justify-center mt-16">
-        <button className="bg-white text-black px-10 py-3 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-100 font-medium">
-                  View Projects
-                </button>
+          <button className="bg-white text-black px-10 py-3 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-100 font-medium">
+            View Projects
+          </button>
         </div>
       </div>
     </section>

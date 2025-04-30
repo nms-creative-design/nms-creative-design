@@ -1,20 +1,19 @@
-// components/DynamicTabs.jsx
 import React, { useState } from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 import Image from "next/image";
 
 // Main DynamicTabs Component
 const DynamicTabs = ({
-  heading = "What sets us apart", // Default heading
-  items = [], // Array of accordion items: { id, title, description, icon }
-  imageSrc = "/images/content.png", // Right-side image source
-  imageAlt = "Creative studio workspace", // Image alt text
-  showImage = true, // Toggle to show/hide the right-side image
-  sectionClassName = "", // Additional classes for the section
-  headingClassName = "", // Additional classes for the heading
-  accordionClassName = "", // Additional classes for each accordion
-  imageClassName = "", // Additional classes for the image
-  iconsData = [], // Array of icon data: { name, src, alt }
+  heading = "What sets us apart",
+  items = [],
+  imageSrc = "/images/content.png",
+  imageAlt = "Creative studio workspace",
+  showImage = true,
+  sectionClassName = "",
+  headingClassName = "",
+  accordionClassName = "",
+  imageClassName = "",
+  iconsData = [],
 }) => {
   const [open, setOpen] = useState(1);
 
@@ -35,12 +34,11 @@ const DynamicTabs = ({
         {/* Content - Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Accordions */}
-          <div className="space-y-4">
+          <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
             {items.map((item) => {
-              // Find the icon data from iconsData based on item.icon
               const iconData = iconsData.find((icon) => icon.name === item.icon);
               return (
-                <div key={item.id} className="relative group">
+                <div key={item.id} className="relative group w-full">
                   <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-white/20 to-white/20 opacity-0 group-hover:opacity-100 transition duration-300"></div>
                   <Accordion
                     open={open === item.id}
@@ -53,7 +51,6 @@ const DynamicTabs = ({
                       aria-controls={`accordion-body-${item.id}`}
                     >
                       <div className="flex items-center gap-2">
-                        {/* Render the icon using Image component if iconData exists */}
                         {iconData && (
                           <Image
                             src={iconData.src}

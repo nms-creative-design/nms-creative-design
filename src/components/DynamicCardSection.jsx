@@ -8,19 +8,35 @@ import {
 // Reusable Card Component
 function CardWithLink({ title, description, imageSrc, index }) {
   return (
-    <Card className="w-80 sm:w-96 flex-shrink-0 snap-center bg-[#111111] border border-gray-800 rounded-lg text-left hover:border-gray-600 transition-all duration-300 slide-in-right" style={{ animationDelay: `${index * 0.2}s` }}>
-      <CardBody className="p-8">
-        <div className="flex justify-left mb-6">
+    <Card
+      className={`group w-80 sm:w-96 flex-shrink-0 snap-center bg-[#111111] border border-gray-800 
+                  rounded-lg text-left transition-all duration-300 relative overflow-hidden 
+                  backdrop-blur-md shadow-lg hover:border-gray-600 slide-in-right`}
+      style={{ animationDelay: `${index * 0.2}s` }}
+    >
+      {/* Radial red glow in top-right */}
+      <div className="absolute -top-16 -right-16 w-96 h-96 
+                      bg-[radial-gradient(circle_at_top_right,_rgba(239,68,68,0.35),_transparent_80%)] 
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+                      rounded-full blur-2xl pointer-events-none z-0" />
+
+      {/* Glow border on hover */}
+      <div className="absolute inset-0 border border-transparent 
+                      group-hover:border-red-500/40 group-hover:border-opacity-30 
+                      rounded-lg transition-all duration-300 z-0"></div>
+
+      <CardBody className="p-8 relative z-10">
+        <div className="flex justify-left mb-6 transition-transform duration-500 group-hover:scale-110">
           <img
             src={imageSrc}
             alt={`${title} icon`}
             className="h-12 w-12 object-contain"
           />
         </div>
-        <Typography variant="h5" className="text-white mb-2">
+        <Typography variant="h5" className="text-white mb-2 transition-all duration-500 group-hover:text-shadow group-hover:scale-105">
           {title}
         </Typography>
-        <Typography className="text-gray-400">
+        <Typography className="text-gray-400 transition-all duration-500 group-hover:text-white">
           {description}
         </Typography>
       </CardBody>
@@ -98,7 +114,6 @@ const DynamicCardSection = ({
                 }
               }
 
-              /* Custom Scrollbar Styling */
               .scrollbar-thin {
                 scrollbar-width: thin;
               }

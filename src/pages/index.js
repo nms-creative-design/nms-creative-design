@@ -1,12 +1,12 @@
 import Cta from '@/components/Cta';
 import Footer from '@/components/Footer';
-import About from '@/components/Home/About';
+import About from '@/components/About';
 import Faq from '@/components/Faq';
-import Hero from '@/components/Home/Hero';
+import Hero from '@/components/Hero';
 import ImageSlider from '@/components/ImageSlider';
 import Project from '@/components/Project';
-import Services from '@/components/Home/Services';
-import Setapart from '@/components/Home/Setapart';
+import Services from '@/components/Services';
+import Setapart from '@/components/Setapart';
 import { StickyNavbar } from '@/components/StickyNavbar';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';

@@ -1,7 +1,7 @@
 // pages/services.jsx
 import React from "react";
 import Inner from "@/components/Inner";// Adjust path if Inner is in a different directory (e.g., '@/components/About/Inner')
-import Tabservices from "@/components/Services/Tabservices";
+import Tabservices from "@/components/Tabservices";
 import Project from "@/components/Project";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
