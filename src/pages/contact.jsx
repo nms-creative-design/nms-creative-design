@@ -86,12 +86,6 @@ const Contact = () => {
             <div className="absolute -top-16 -right-16 w-96 h-96 bg-[radial-gradient(circle_at_top_right,_rgba(239,68,68,0.35),_transparent_80%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full blur-2xl pointer-events-none z-0" />
             <div className="absolute inset-0 border border-transparent group-hover:border-red-500/40 group-hover:border-opacity-30 rounded-lg transition-all duration-300 z-0" />
 
-            <Typography variant="h4" className="text-white font-bold mb-2 relative z-10">
-              Contact Us
-            </Typography>
-            <Typography className="text-gray-300 font-normal mb-6 relative z-10 transition-all duration-500 group-hover:text-white">
-              Fill out the form below, and we'll get back to you soon.
-            </Typography>
 
             <form className="mb-2 w-full mx-auto relative z-10" onSubmit={handleSubmit}>
               <div className="mb-1 flex flex-col gap-6 sm:gap-8">

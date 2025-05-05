@@ -47,19 +47,19 @@ const valuesContent = {
       title: 'Wire-framing and Prototyping',
       description:
         'We use wireframing and prototyping techniques to visualize and refine the website structure and functionality before moving into the development phase. This allows us to align our design concepts with your goals and make necessary iterations early in the process.',
-      imageSrc: '/images/icons/vi6.svg', // Changed to unique icon (assumed)
+      imageSrc: '/images/icons/vi6.svg',
     },
     {
       title: 'Conversion-focused Design',
       description:
         'Our web designs are strategically crafted to drive conversions and achieve your desired goals. We optimize the layout, calls-to-action, and user flow to guide visitors towards taking desired actions, whether it’s making a purchase, submitting a form, or engaging with your content.',
-      imageSrc: '/images/icons/vi7.svg', // Changed to unique icon (assumed)
+      imageSrc: '/images/icons/vi7.svg',
     },
     {
       title: 'Website Redesign and Revamping',
       description:
         'If you already have an existing website, we can revamp and enhance its design to give it a fresh and modern look. Our redesign services focus on improving user experience, incorporating the latest design trends, and aligning with your evolving brand strategy.',
-      imageSrc: '/images/icons/vi8.svg', // Changed to unique icon (assumed)
+      imageSrc: '/images/icons/vi8.svg',
     },
   ],
 };
@@ -84,11 +84,13 @@ const Design = () => {
         sectionClassName="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-12 pb-12"
         containerClassName="container mx-auto px-6 max-w-6xl z-10"
       />
-        {/* New p tag section below the cards */}
-        <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
+      <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
         At NMS Creative Designs, we believe that design is not just about making things look good. It's about creating a visual language that communicates your message effectively. Whether you need a logo, website, or marketing material, we are here to help you create designs that make an impact.
       </p>
-      <DynamicPortfolio />
+      <DynamicPortfolio
+        heading="Web Design Portfolio"
+        categories={["Web Design"]}
+      />
       <Cta />
       <Footer />
     </div>

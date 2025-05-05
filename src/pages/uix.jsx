@@ -1,11 +1,11 @@
-import Cta from '@/components/Cta'
-import { DynamicCardSection } from '@/components/DynamicCardSection'
-import DynamicPortfolio from '@/components/DynamicPortfolio'
-import Footer from '@/components/Footer'
-import Inner from '@/components/Inner'
-import { StickyNavbar } from '@/components/StickyNavbar'
-import Tabsdesign from '@/components/Tabsdesign'
-import React from 'react'
+import Cta from '@/components/Cta';
+import { DynamicCardSection } from '@/components/DynamicCardSection';
+import DynamicPortfolio from '@/components/DynamicPortfolio';
+import Footer from '@/components/Footer';
+import Inner from '@/components/Inner';
+import { StickyNavbar } from '@/components/StickyNavbar';
+import Tabsdesign from '@/components/Tabsdesign';
+import React from 'react';
 
 const valuesContent = {
   title: 'UI / UX Services',
@@ -39,7 +39,7 @@ const valuesContent = {
     {
       title: 'User Experience (UX) Design',
       description:
-        'We prioritize user-centered design principles to create websites that provide a seamless and delightful user experience. We conduct thorough research and analysis to understand your target audience and design websites that meet their needs and expectations.',
+        'We prioritize user-centered design principles to create websites that provide a seamless and delightful user experience. We conduct thorough часу research and analysis to understand your target audience and design websites that meet their needs and expectations.',
       imageSrc: '/images/icons/vi4.svg',
     },
     {
@@ -57,11 +57,11 @@ const valuesContent = {
   ],
 };
 
-const uix = () => {
+const Uix = () => {
   return (
     <div className="min-h-screen relative bg-black">
       <StickyNavbar />
-      <Inner 
+      <Inner
         title="UI / UX Design"
         description="The UI/UX services offered by our company are designed to provide our clients with an exceptional user experience. Our team of experienced professionals is committed to creating interfaces that are visually appealing, intuitive and easy to use."
         imageSrc="/images/logoinner.png"
@@ -69,7 +69,7 @@ const uix = () => {
         showImage={true}
       />
       <Tabsdesign />
-      <DynamicCardSection 
+      <DynamicCardSection
         sectionTitle={valuesContent.title}
         description={valuesContent.description}
         cardData={valuesContent.cardData}
@@ -77,16 +77,17 @@ const uix = () => {
         sectionClassName="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-12 pb-12"
         containerClassName="container mx-auto px-6 max-w-6xl z-10"
       />
-
-      {/* New p tag section below the cards */}
       <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
-      At our company, we provide end-to-end UI/UX design services that enable our clients to deliver exceptional user experiences. Contact us today to learn more about how we can help you enhance your interface and delight your users.
+        At our company, we provide end-to-end UI/UX design services that enable our clients to deliver exceptional user experiences. Contact us today to learn more about how we can help you enhance your interface and delight your users.
       </p>
-      <DynamicPortfolio />
+      <DynamicPortfolio
+        heading="UI / UX Design Portfolio"
+        categories={["UI / UX Design"]}
+      />
       <Cta />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default uix
+export default Uix;

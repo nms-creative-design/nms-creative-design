@@ -39,11 +39,11 @@ const valuesContent = {
   ],
 };
 
-const graphic = () => {
+const Graphic = () => {
   return (
     <div className="min-h-screen relative bg-black">
       <StickyNavbar />
-      <Inner 
+      <Inner
         title="Graphic Design"
         description="It is the art of creating visual content that communicates a message to a target audience. Graphic design services include designing logos, brochures, websites, social media graphics, and more."
         imageSrc="/images/logoinner.png"
@@ -51,25 +51,25 @@ const graphic = () => {
         showImage={true}
       />
       <Tabsdesign />
-       <DynamicCardSection
-              sectionTitle={valuesContent.title}
-              description={valuesContent.description}
-              cardData={valuesContent.cardData}
-              titleGradientClasses="from-gray-500 via-white to-gray-200"
-              sectionClassName="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-12 pb-12"
-              containerClassName="container mx-auto px-6 max-w-6xl z-10"
-            />
-
-      {/* Paragraph section below the cards with fixed spacing */}
+      <DynamicCardSection
+        sectionTitle={valuesContent.title}
+        description={valuesContent.description}
+        cardData={valuesContent.cardData}
+        titleGradientClasses="from-gray-500 via-white to-gray-200"
+        sectionClassName="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-12 pb-12"
+        containerClassName="container mx-auto px-6 max-w-6xl z-10"
+      />
       <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
         At NMS Creative Designs, we believe that design is not just about making things look good. It’s about creating a visual language that communicates your message effectively. Whether you need a logo, website, or marketing material, we are here to help you create designs that make an impact.
       </p>
-
-      <DynamicPortfolio />
+      <DynamicPortfolio
+        heading="Graphic Design Portfolio"
+        categories={["Graphic Design"]}
+      />
       <Cta />
       <Footer />
     </div>
   );
 };
 
-export default graphic;
+export default Graphic;

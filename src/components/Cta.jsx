@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from "next/link";
 
 export const Cta = () => {
   return (
@@ -36,9 +37,11 @@ export const Cta = () => {
               </p>
 
               <div className="flex justify-center mt-6">
+                <Link href="/contact">
                 <button className="bg-white text-black hover:bg-gray-100 transition-colors py-3 px-8 rounded-full font-medium">
                   Start a Project
                 </button>
+                </Link>
               </div>
             </div>
           </div>

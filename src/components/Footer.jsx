@@ -19,9 +19,11 @@ const Footer = () => {
                 Ready to make your vision a reality?<br />
                 Contact us today!
               </Typography>
+              <Link href="/contact">  
               <button className="bg-white mt-4 text-black py-3 px-8 w-64 rounded-full font-medium hover:bg-gray-200 transition-colors">
                 Start A Project
               </button>
+              </Link>
             </div>
 
             {/* Social Icons */}

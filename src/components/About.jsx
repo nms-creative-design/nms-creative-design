@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import Link from "next/link";
 // Define ImgWithShadow as a separate component
 export function ImgWithShadow() {
   return (
@@ -154,9 +154,11 @@ const About = () => {
               </p>
               
               <div className="flex justify-center">
+                <Link href="/aboutus">
                 <button className="bg-white text-black py-3 px-8 rounded-full font-medium hover:bg-gray-200 transition-colors">
                   Know More
                 </button>
+                </Link>
               </div>
             </div>
           </div>

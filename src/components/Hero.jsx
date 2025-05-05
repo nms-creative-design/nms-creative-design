@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from "next/link";
 
 const Hero = () => {
   const particlesRef = useRef(null);
@@ -73,8 +74,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black z-0"></div>
 
       {/* Light Beam Effect - Hidden on smaller screens, visible on lg and above */}
-      <div className="absolute inset-0 z-0 overflow-hidden hidden lg:block" style={{ height: '70vh' }}>
-        <div className="absolute h-full w-[450px]" style={{ left: 'calc(50% + 150px)' }}>
+      <div className="absolute inset-0 z-0 overflow-hidden hidden lg:block" style={{ height: 'calc(100% - 320px)' }}>
+        <div className="absolute w-[450px]" style={{ left: 'calc(50% + 150px)', height: '100%' }}>
           {/* Core Beam */}
           <div className="absolute left-1/2 top-0 h-full transform -translate-x-1/2 w-[10px] bg-white/90 shadow-[0_0_30px_10px_rgba(255,255,255,0.7)] blur-sm"></div>
 
@@ -149,9 +150,11 @@ const Hero = () => {
                 Boost your brand with Creative X—drive engagement, increase conversions, and dominate search results effortlessly.
               </p>
               <div className="flex flex-col md:flex-row justify-start gap-6 mt-6">
+                <Link href="/contact">      
                 <button className="bg-white text-black px-10 py-3 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-100 font-medium">
                   Contact Us
                 </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -27,11 +27,11 @@ const valuesContent = {
   ],
 };
 
-const webdev = () => {
+const Webdev = () => {
   return (
     <div className="min-h-screen relative bg-black">
       <StickyNavbar />
-      <Inner 
+      <Inner
         title="Web Development"
         description="Web development services refers to the process of creating, building, and maintaining websites for individuals, businesses, and organizations. These includes web design, web content development, client-side scripting, and server side scripting among others."
         imageSrc="/images/logoinner.png"
@@ -39,26 +39,26 @@ const webdev = () => {
         showImage={true}
       />
       <Tabsdesign />
-      <DynamicCardSection 
+      <DynamicCardSection
         sectionTitle={valuesContent.title}
         description={valuesContent.description}
         cardData={valuesContent.cardData}
         titleGradientClasses="from-gray-500 via-white to-gray-200"
         sectionClassName="relative w-full flex flex-col items-center justify-center overflow-hidden bg-black pt-12 pb-12"
         containerClassName="container mx-auto px-6 max-w-6xl z-10"
-        cardContainerClassName="flex flex-wrap justify-center gap-4 pb-4" // Updated for centering
+        cardContainerClassName="flex flex-wrap justify-center gap-4 pb-4"
       />
-
-      {/* Updated paragraph section below the cards */}
       <p className="text-gray-400 text-lg text-center max-w-3xl mx-auto px-4 mb-20">
         At our company, we provide comprehensive web development services to create, build, and maintain websites that meet your needs. Contact us today to learn more about how we can help you establish a strong online presence.
       </p>
-
-      <DynamicPortfolio />
+      <DynamicPortfolio
+        heading="Web Development Portfolio"
+        categories={["Web Development"]}
+      />
       <Cta />
       <Footer />
     </div>
   );
 };
 
-export default webdev;
+export default Webdev;

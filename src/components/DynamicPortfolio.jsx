@@ -1,51 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import ReusableButton from '@/components/ReusableButton';
+import { projectsData } from '@/data/projectsData';
 
 const DynamicPortfolio = ({
-  heading = "Web Design Gallery",
-  projects = [],
+  heading = "Portfolio Gallery",
+  categories = [],
   sectionClassName = "",
   headingClassName = "",
   gridClassName = "",
   cardClassName = "",
 }) => {
-  const defaultProjects = [
-    {
-      id: 1,
-      title: "Project 1",
-      category: "Category",
-      description: "Web design services encompass the process of creating and designing visually appealing, functional, and user-friendly websites.",
-      imageSrc: "/images/sidni.png",
-      imageAlt: "Project 1 thumbnail",
-    },
-    {
-      id: 2,
-      title: "Project 2",
-      category: "Category",
-      description: "Web design services encompass the process of creating and designing visually appealing, functional, and user-friendly websites.",
-      imageSrc: "/images/tingo.png",
-      imageAlt: "Project 2 thumbnail",
-    },
-    {
-      id: 3,
-      title: "Project 3",
-      category: "Category",
-      description: "Web design services encompass the process of creating and designing visually appealing, functional, and user-friendly websites.",
-      imageSrc: "/images/sidni.png",
-      imageAlt: "Project 3 thumbnail",
-    },
-    {
-      id: 4,
-      title: "Project 4",
-      category: "Category",
-      description: "Web design services encompass the process of creating and designing visually appealing, functional, and user-friendly websites.",
-      imageSrc: "/images/tingo.png",
-      imageAlt: "Project 4 thumbnail",
-    },
-  ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
 
-  const displayProjects = projects.length > 0 ? projects.slice(0, 4) : defaultProjects;
+  // Responsive items per page logic
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(3);
+      } else {
+        setItemsPerPage(6);
+      }
+    };
+
+    updateItemsPerPage(); // Run on mount
+    window.addEventListener('resize', updateItemsPerPage);
+
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
+
+  // Filter projects based on categories prop
+  const displayProjects = categories.length > 0
+    ? projectsData.filter(project =>
+        project.categories.some(category => categories.includes(category))
+      )
+    : projectsData;
+
+  const totalPages = Math.ceil(displayProjects.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProjects = displayProjects.slice(startIndex, endIndex);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <section className={`relative bg-black py-32 ${sectionClassName}`}>
@@ -63,13 +64,13 @@ const DynamicPortfolio = ({
           </h2>
         </div>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center ${gridClassName}`}>
-          {displayProjects.map((project) => (
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center ${gridClassName}`}>
+          {currentProjects.map((project) => (
             <div
               key={project.id}
               className={`relative group rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/30 backdrop-blur-sm max-w-full ${cardClassName}`}
             >
-              <div className="relative h-80 md:h-96 w-full overflow-hidden">
+              <div className="relative h-48 md:h-56 w-full overflow-hidden">
                 <Image
                   src={project.imageSrc}
                   alt={project.imageAlt}
@@ -80,34 +81,52 @@ const DynamicPortfolio = ({
                 />
               </div>
 
-              <div className="p-8">
-                <div className="inline-block mb-4">
-                  <span className="text-sm font-medium bg-gray-800 text-gray-300 px-4 py-2 rounded-full">
-                    {project.category}
-                  </span>
+              <div className="p-4">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.categories.map((category, index) => (
+                    <span
+                      key={index}
+                      className="text-xs font-medium bg-red-600 text-white px-2 py-0.5 rounded-full border border-red-500/50"
+                    >
+                      {category}
+                    </span>
+                  ))}
                 </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-3">
+
+                <h3 className="text-lg font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                
-                <p className="text-gray-400 mb-6 text-base">
+
+                <p className="text-gray-400 mb-4 text-sm line-clamp-3">
                   {project.description}
                 </p>
-                
-                <div className="flex items-center text-white text-lg cursor-pointer">
-                <span className="mr-2 text-sm font-bold text-white">View Project</span>
+
+                <div className="flex items-center text-white text-sm cursor-pointer">
+                  <span className="mr-2 text-xs font-bold text-white">View Project</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="flex justify-center mt-16">
-          <button className="bg-white text-black px-10 py-3 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-100 font-medium">
-            View Projects
-          </button>
-        </div>
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-16 space-x-2">
+            {pageNumbers.map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-4 py-2 rounded-full font-medium ${
+                  currentPage === page
+                    ? 'bg-gray-300 text-black cursor-not-allowed'
+                    : 'bg-white text-black hover:bg-gray-100'
+                }`}
+                disabled={currentPage === page}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

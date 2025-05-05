@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
+import Link from "next/link";
 
 function Icon({ id, open }) {
   return (
@@ -66,7 +67,7 @@ export default function Faq() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-start gap-16">
           {/* Left Content */}
-          <div className="lg:w-1/3 space-y-8 sticky top-24 self-start">
+          <div className="lg:w-1/3 space-y-8 lg:sticky lg:top-24 self-start">
             <div className="relative">
               <div className="absolute -inset-1 blur-sm rounded-lg"></div>
               <h2 className="relative text-5xl font-bold text-left leading-tight">
@@ -78,9 +79,11 @@ export default function Faq() {
             <p className="text-gray-300 text-lg">
               Everything you need to know about our services and process.
             </p>
-            <button className="bg-white text-black hover:bg-gray-100 transition-colors py-3 px-8 rounded-full font-medium">
+            <Link href="/contact">
+            <button className="bg-white text-black hover:bg-gray-100 transition-colors py-3 mt-8 px-8 rounded-full font-medium">
               Start a Project
             </button>
+            </Link>
           </div>
 
           {/* Right Content */}
