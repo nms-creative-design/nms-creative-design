@@ -4,47 +4,47 @@ export function CarouselCustomNavigation() {
   const images = [
     [
       {
-        src: "/images/sidni.png",
+        src: "/images/projects/ironX - Thumbnail.png",
         alt: "Make Investment smooth as breeze",
-        title: "Make Investment smooth as breeze",
+        title: "IronX",
       },
       {
-        src: "/images/sidni.png",
+        src: "/images/projects/XBot - Thumbnail.png",
         alt: "Make payment smooth as breeze",
-        title: "Make payment smooth as breeze",
+        title: "XBot",
       },
       {
-        src: "/images/sidni.png",
+        src: "/images/projects/Rehive - Thumbnail.png",
         alt: "Corporate card that makes your life easier",
-        title: "Corporate card that makes your life easier",
+        title: "Rehive",
       },
     ],
     [
       {
-        src: "/images/sidni.png",
+        src: "/images/projects/Genesys - Thumbnail.png",
         alt: "Financial analytics dashboard",
-        title: "Financial analytics dashboard",
+        title: "Genesys",
       },
       {
-        src: "/images/sidni.png",
+        src: "/images/projects/ABC-TECH - Thumbnail.png",
         alt: "Mobile banking app",
-        title: "Mobile banking app",
+        title: "ABC Technologies",
       },
       {
-        src: "/images/sidni.png",
+        src: "/images/projects/Admoxi.png",
         alt: "Business credit card solution",
-        title: "Business credit card solution",
+        title: "Admoxi",
       },
     ],
   ];
 
   const mobileImages = [
-    [{ src: "/images/sidni.png", alt: "Make Investment smooth as breeze", title: "Make Investment smooth as breeze" }],
-    [{ src: "/images/sidni.png", alt: "Make payment smooth as breeze", title: "Make payment smooth as breeze" }],
-    [{ src: "/images/sidni.png", alt: "Corporate card that makes your life easier", title: "Corporate card that makes your life easier" }],
-    [{ src: "/images/sidni.png", alt: "Financial analytics dashboard", title: "Financial analytics dashboard" }],
-    [{ src: "/images/sidni.png", alt: "Mobile banking app", title: "Mobile banking app" }],
-    [{ src: "/images/sidni.png", alt: "Business credit card solution", title: "Business credit card solution" }],
+    [{ src: "/images/projects/ironX - Thumbnail.png", alt: "Make Investment smooth as breeze", title: "IronX" }],
+    [{ src: "/images/projects/XBot - Thumbnail.png", alt: "Make payment smooth as breeze", title: "XBot" }],
+    [{ src: "/images/projects/Rehive - Thumbnail.png", alt: "Corporate card that makes your life easier", title: "Rehive" }],
+    [{ src: "/images/projects/Genesys - Thumbnail.png", alt: "Financial analytics dashboard", title: "Genesys" }],
+    [{ src: "/images/projects/ABC-TECH - Thumbnail.png", alt: "Mobile banking app", title: "ABC Technologies" }],
+    [{ src: "/images/projects/Admoxi.png", alt: "Business credit card solution", title: "Admoxi" }],
   ];
 
   const renderCarousel = (imageSet, isMobile = false) => (
