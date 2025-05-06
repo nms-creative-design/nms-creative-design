@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { projectsData } from '@/data/projectsData';
+import Link from 'next/link';
 
 const DynamicPortfolio = ({
   heading = "Portfolio Gallery",
@@ -72,7 +73,7 @@ const DynamicPortfolio = ({
             >
               <div className="relative h-48 md:h-56 w-full overflow-hidden">
                 <Image
-                  src={project.imageSrc}
+                  src={project.imagePreview}
                   alt={project.imageAlt}
                   width={800}
                   height={600}
@@ -102,7 +103,9 @@ const DynamicPortfolio = ({
                 </p>
 
                 <div className="flex items-center text-white text-sm cursor-pointer">
+                  <Link href={project.link || '/happy-wally'} className="flex items-center">
                   <span className="mr-2 text-xs font-bold text-white">View Project</span>
+                  </Link>
                 </div>
               </div>
             </div>

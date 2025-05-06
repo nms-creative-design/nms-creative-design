@@ -1,12 +1,13 @@
 // components/Inner.jsx
+
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 // Define props for the component
 const Inner = ({
-  title,
+  title = 'title',
   description,
-  imageSrc = "/images/logoinner.png",
+  imageSrc = "/images/inner1.png",
   imageAlt = "Section Image",
   showImage = true,
   sectionClassName = "",
@@ -119,7 +120,7 @@ const Inner = ({
           {/* Image */}
           {showImage && (
             <div
-              className={`md:w-2/5 flex justify-center md:justify-end fade-in-up hidden sm:flex items-center ${imageClassName}`}
+              className={`md:w-1/5 flex justify-center md:justify-end fade-in-up hidden sm:flex items-center ${imageClassName}`}
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-white/20 rounded-full blur-xl"></div>

@@ -71,7 +71,7 @@ const Design = () => {
       <Inner
         title="Web Design"
         description="Web design services encompass the process of creating and designing visually appealing, functional, and user-friendly websites. It’s focus on crafting the visual and interactive elements of a website to ensure a positive user experience and effective communication of a brand's message."
-        imageSrc="/images/logoinner.png"
+        imageSrc="/images/inner1.png"
         imageAlt="Company Logo"
         showImage={true}
       />
