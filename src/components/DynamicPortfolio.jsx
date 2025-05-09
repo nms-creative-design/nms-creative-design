@@ -59,7 +59,7 @@ const DynamicPortfolio = ({
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="text-left mb-10">
           <h2
-            className={`font-bold text-4xl bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text ${headingClassName}`}
+            className={`font-bold text-4xl bg-gradient-to-r from-gray-500 via-white to-gray-200 text-transparent bg-clip-text text-center ${headingClassName}`}
           >
             {heading}
           </h2>
@@ -67,7 +67,8 @@ const DynamicPortfolio = ({
 
         <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center ${gridClassName}`}>
           {currentProjects.map((project) => (
-            <div
+            <Link
+              href={project.link}
               key={project.id}
               className={`relative group rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/30 backdrop-blur-sm max-w-full ${cardClassName}`}
             >
@@ -103,12 +104,9 @@ const DynamicPortfolio = ({
                 </p>
 
                 <div className="flex items-center text-white text-sm cursor-pointer">
-                  <Link href={project.link || '/happy-wally'} className="flex items-center">
-                  <span className="mr-2 text-xs font-bold text-white">View Project</span>
-                  </Link>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

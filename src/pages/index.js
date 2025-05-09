@@ -1,12 +1,12 @@
-import Cta from '@/components/Cta';
-import Footer from '@/components/Footer';
-import About from '@/components/About';
-import Faq from '@/components/Faq';
-import Hero from '@/components/Hero';
-import ImageSlider from '@/components/ImageSlider';
-import Project from '@/components/Project';
-import Services from '@/components/Services';
-import Setapart from '@/components/Setapart';
+import CtaSection from '@/components/CtaSection';
+import FooterSection from '@/components/FooterSection';
+import AboutSection from '@/components/AboutSection';
+import FaqSection from '@/components/FaqSection';
+import MainHeroSection from '@/components/MainHeroSection';
+import CompanyLogoSlider from '@/components/CompanyLogoSlider';
+import LatestProjectsSection from '@/components/LatestProjectsSection';
+import ServicesSection from '@/components/ServicesSection';
+import WhatSetsUsApartSection from '@/components/WhatSetsUsApartSection';
 import { StickyNavbar } from '@/components/StickyNavbar';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -45,15 +45,15 @@ export default function Home() {
       <div className="font-inter">
         <StickyNavbar />
         <main>
-          <Hero />
-          <ImageSlider />
-          <Services />
-          <About />
-          <Project />
-          <Setapart />
-          <Faq />
-          <Cta />
-          <Footer />
+          <MainHeroSection />
+          <CompanyLogoSlider />
+          <ServicesSection />
+          <AboutSection />
+          <LatestProjectsSection />
+          <WhatSetsUsApartSection />
+          <FaqSection />
+          <CtaSection />
+          <FooterSection />
         </main>
 
         {/* Back to Top Button */}

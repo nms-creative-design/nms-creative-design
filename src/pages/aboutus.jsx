@@ -1,9 +1,9 @@
 import { StickyNavbar } from "@/components/StickyNavbar";
 import React from "react";
-import Inner from "@/components/Inner";
+import OtherHeroSection from "@/components/OtherHeroSection";
 import Difference from "@/components/Difference";
-import Cta from "@/components/Cta";
-import Footer from "@/components/Footer";
+import CtaSection from "@/components/CtaSection";
+import FooterSection from "@/components/FooterSection";
 import DynamicTabs from "@/components/DynamicTabs";
 import Team from "@/components/Team";
 import { DynamicCardSection } from "@/components/DynamicCardSection";
@@ -40,15 +40,19 @@ const iconsData = [
 // Single array to store all content for the page
 const contentData = [
   {
-    section: "inner",
+    section: 'hero',
     data: {
       title: "About Us",
-      description:
-        "Transform your digital footprint instantly with NMS Creative Design. Our cutting-edge solutions drive engagement, boost conversions, and propel your brand to the top of search results. Stop disappearing online—start commanding attention today.",
-      imageSrc: "/images/logoinner.png",
-      imageAlt: "Company Logo",
-      showImage: true,
-    },
+      description: 'Transform your digital footprint instantly with NMS Creative Design. Our cutting-edge solutions drive engagement, boost conversions, and propel your brand to the top of search results. Stop disappearing online—start commanding attention today.',
+      images: {
+        hero: {
+          src: '/assets/pages/about/logo-black.webp',
+          alt: 'About Us Hero Image',
+          height: '240',
+          width: '240',
+      }
+    }
+    }
   },
   {
     section: "difference",
@@ -162,33 +166,32 @@ const contentData = [
 ];
 
 // Extract content for each section
-const innerContent = contentData.find((item) => item.section === "inner")?.data || {};
+const heroContent = contentData.find((item) => item.section === "hero")?.data || {};
 const differenceContent = contentData.find((item) => item.section === "difference")?.data || {};
 const dynamicTabsContent = contentData.find((item) => item.section === "dynamicTabs")?.data || {};
 const valuesContent = contentData.find((item) => item.section === "values")?.data || {};
 const teamContent = contentData.find((item) => item.section === "team")?.data || {};
 const ctaContent = contentData.find((item) => item.section === "cta")?.data || {};
 
-export default function About() {
+export default function AboutUs() {
+
+
   return (
     <div className="min-h-screen relative">
       {/* Navbar */}
       <StickyNavbar />
-      <Inner
-        title={innerContent.title}
-        description={innerContent.description}
-        imageSrc={innerContent.imageSrc}
-        imageAlt={innerContent.imageAlt}
-        showImage={innerContent.showImage}
+      <OtherHeroSection
+        content={heroContent}
       />
       <Difference {...differenceContent} />
       <DynamicTabs
-        heading={dynamicTabsContent.heading}
-        items={dynamicTabsContent.items}
-        imageSrc={dynamicTabsContent.imageSrc}
-        imageAlt={dynamicTabsContent.imageAlt}
-        showImage={dynamicTabsContent.showImage}
+        // heading={dynamicTabsContent.heading}
+        // items={dynamicTabsContent.items}
+        // imageSrc={dynamicTabsContent.imageSrc}
+        // imageAlt={dynamicTabsContent.imageAlt}
+        // showImage={dynamicTabsContent.showImage}
         iconsData={iconsData}
+        content={dynamicTabsContent}
       />
       <DynamicCardSection
         sectionTitle={valuesContent.title}
@@ -199,8 +202,8 @@ export default function About() {
         containerClassName="container mx-auto px-6 py-12 max-w-6xl z-10"
       />
       <Team {...teamContent} />
-      <Cta {...ctaContent} />
-      <Footer />
+      <CtaSection {...ctaContent} />
+      <FooterSection />
     </div>
   );
 }

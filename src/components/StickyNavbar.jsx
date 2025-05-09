@@ -32,13 +32,13 @@ export function StickyNavbar() {
         <Link href="/">Home</Link>
       </Typography>
       <Typography as="li" className="p-1 text-gray-200">
-        <Link href="/aboutus">About</Link>
+        <Link href="/AboutUs">About</Link>
       </Typography>
       <Typography as="li" className="p-1 text-gray-200">
         <Menu>
           <MenuHandler>
             <div className="flex items-center cursor-pointer">
-            <Link href="/services">Services</Link>
+            <Link href="/Services">Services</Link>
               <svg
                 className="h-4 w-4 ml-1"
                 fill="none"
@@ -52,16 +52,16 @@ export function StickyNavbar() {
           </MenuHandler>
           <MenuList className="bg-black border border-gray-700 mt-4">
             <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
-              <Link href="/design" className="block w-full">Web Design</Link>
+              <Link href="/WebDesign" className="block w-full">Web Design</Link>
             </MenuItem>
             <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
-              <Link href="/uix" className="block w-full">UI / UX Design</Link>
+              <Link href="/UiUxDesign" className="block w-full">UI / UX Design</Link>
             </MenuItem>
             <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
-              <Link href="/webdev" className="block w-full">Web Development</Link>
+              <Link href="/WebDevelopment" className="block w-full">Web Development</Link>
             </MenuItem>
             <MenuItem className="text-gray-200 hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white active:bg-gray-900 active:text-white">
-              <Link href="/graphic" className="block w-full">Graphic Design</Link>
+              <Link href="/GraphicDesign" className="block w-full">Graphic Design</Link>
             </MenuItem>
           </MenuList>
         </Menu>
@@ -89,7 +89,7 @@ export function StickyNavbar() {
         {/* Desktop Menu and Contact Button */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">{navList}</div>
-          <Link href="/contact">
+          <Link href="/Contact">
             <Button
               variant="outlined"
               className="hidden lg:block border-gray-500 text-gray-300 hover:bg-gray-800 rounded-full"

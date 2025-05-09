@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer';
-import Inner from '@/components/Inner';
+import FooterSection from '@/components/FooterSection';
+import OtherHeroSection from '@/components/OtherHeroSection';
 import { StickyNavbar } from '@/components/StickyNavbar';
 import React, { useState } from 'react';
 import { Card, Typography, Input, Textarea, Button } from "@material-tailwind/react";
@@ -53,6 +53,27 @@ const Contact = () => {
       });
   };
 
+  const contentData = [
+    {
+      section: 'hero',
+      data: {
+        title: "Contact Us",
+        description: "Transform your digital footprint instantly with Creative X. Our cutting-edge solutions drive engagement, boost conversions, and propel your brand to the top of search results. Stop disappearing online—start commanding attention today.",
+        images: {
+          hero: {
+            src:'/assets/pages/about/logo-black.webp',
+            alt: 'Contact Hero Image',
+            height: '240',
+            width: '240',
+          }
+        }
+        
+      }
+    }
+  ]
+
+  const heroContent = contentData.find((item) => item.section === "hero")?.data || {};
+
   const inputProps = {
     size: "lg",
     className: "!border-0 !border-b-2 !border-gray-600 focus:!border-b-red-500 !text-white bg-transparent hover:bg-white/5 transition-all duration-300 rounded-md",
@@ -71,12 +92,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <StickyNavbar />
-      <Inner 
-        title="Contact Us"
-        description="Transform your digital footprint instantly with Creative X. Our cutting-edge solutions drive engagement, boost conversions, and propel your brand to the top of search results. Stop disappearing online—start commanding attention today."
-        imageSrc="/images/logoinner.png"
-        imageAlt="Company Logo"
-        showImage={true}
+      <OtherHeroSection 
+        content={heroContent}
       />
       
       <div className="container mx-auto px-6 py-16 max-w-6xl">
@@ -186,7 +203,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <Footer />
+      <FooterSection />
     </div>
   );
 };

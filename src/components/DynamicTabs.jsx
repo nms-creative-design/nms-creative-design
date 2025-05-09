@@ -4,17 +4,20 @@ import Image from "next/image";
 
 // Main DynamicTabs Component
 const DynamicTabs = ({
-  heading = "What sets us apart",
-  items = [],
-  imageSrc = "/images/content.png",
-  imageAlt = "Creative studio workspace",
-  showImage = true,
+  // heading = "What sets us apart",
+  // items = [],
+  // imageSrc = "/images/content.png",
+  // imageAlt = "Creative studio workspace",
+  // showImage = true,
   sectionClassName = "",
   headingClassName = "",
   accordionClassName = "",
   imageClassName = "",
   iconsData = [],
+  content
 }) => {
+
+  const {heading, items, imageSrc, imageAlt, showImage } = content
   const [open, setOpen] = useState(1);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
